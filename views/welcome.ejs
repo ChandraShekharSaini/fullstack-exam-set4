@@ -1,0 +1,15 @@
+<%- include('layout', { body: `
+<div class="row mt-5">
+  <div class="col-md-6 m-auto text-center">
+    <h1 class="display-4">Subject Management System</h1>
+    <p class="lead">Create and manage your subjects with ease</p>
+    <hr>
+    <% if(!user) { %>
+      <a href="/users/register" class="btn btn-primary btn-lg mr-2">Register</a>
+      <a href="/users/login" class="btn btn-secondary btn-lg">Login</a>
+    <% } else { %>
+      <a href="/subjects" class="btn btn-primary btn-lg">View Subjects</a>
+    <% } %>
+  </div>
+</div>
+` }) %>

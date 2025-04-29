@@ -1,0 +1,29 @@
+<%- include('../layout', { body: `
+<div class="row">
+  <div class="col-md-12">
+    <h1>Subjects</h1>
+    <a href="/subjects/new" class="btn btn-primary mb-3">Add New Subject</a>
+    <div class="row">
+      <% subjects.forEach(function(subject) { %>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="<%= subject.image %>" class="card-img-top" alt="<%= subject.subjectName %>">
+            <div class="card-body">
+              <h5 class="card-title"><%= subject.subjectName %></h5>
+              <p class="card-text">
+                Price: $<%= subject.price %><br>
+                Units: <%= subject.units %>
+              </p>
+              <div class="btn-group">
+                <a href="/subjects/<%= subject._id %>" class="btn btn-info">View</a>
+                <a href="/subjects/<%= subject._id %>/edit" class="btn btn-warning">Edit</a>
+                <a href="/subjects/<%= subject._id %>/delete" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</div>
+` }) %>

@@ -1,0 +1,21 @@
+<%- include('../layout', { body: `
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card">
+      <img src="<%= subject.image %>" class="card-img-top" alt="<%= subject.subjectName %>">
+      <div class="card-body">
+        <h1 class="card-title"><%= subject.subjectName %></h1>
+        <p class="card-text">
+          <strong>Price:</strong> $<%= subject.price %><br>
+          <strong>Units:</strong> <%= subject.units %>
+        </p>
+        <div class="btn-group">
+          <a href="/subjects/<%= subject._id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/subjects/<%= subject._id %>/delete" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
+        </div>
+        <a href="/subjects" class="btn btn-secondary mt-3 d-block">Back to Subjects</a>
+      </div>
+    </div>
+  </div>
+</div>
+` }) %>
